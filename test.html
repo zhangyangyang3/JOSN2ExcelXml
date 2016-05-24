@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-combobox.js"></script>
+		<script src="js/bootstrap-tagsinput.min.js"></script>
+		<script src="js/json2excel.js"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=7d5662ef905c1d204affe26378594db1&plugin=AMap.Autocomplete"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="css/bootstrap-combobox.css"></link>
+		<link rel="stylesheet" href="css/bootstrap-tagsinput.css"></link>
+	</head>
+	<body>	
+		
+	</body>
+	
+	<script type="text/javascript">
+		var workBook = $J2E.createWorkBook();
+		console.log(workBook);
+		var workSheet = workBook.createWorksheet();
+		var row1 = workSheet.createRow();
+		row1.addCell('中文');
+		row1.addCell('b');
+		row1.addCell('c');
+		var row2 = workSheet.createRow();
+		row2.addCell(1);
+		row2.addCell(2);
+		row2.addCell(3);
+		workSheet.addRow(row1);
+		workSheet.addRow(row2);
+		workBook.addWorkSheet(workSheet);
+		$J2E.export('test', workBook);
+	</script>
+</html>
